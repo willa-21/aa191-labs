@@ -1,5 +1,5 @@
- // declare variables
-let mapOptions = {'center': [47.0709,-122.444],'zoom':5}
+// declare variables
+let mapOptions = {'center': [34.0709,-118.444],'zoom':5}
 
 // use the variables
 const map = L.map('the_map').setView(mapOptions.center, mapOptions.zoom);
@@ -17,9 +17,15 @@ function addMarker(lat,lng,title,message){
 
 fetch("map.geojson")
     .then(response => {
-        return response.json();
+        return response.json()
     })
     .then(data =>{
         // Basic Leaflet method to add GeoJSON data
-        L.geoJSON(data).addTo(map)
-    });
+        L.geoJSON(data, {
+                pointToLayer: (feature, latlng) => { 
+                    return L.circleMarker(latlng, {color: feature.properties.color})
+                }
+            }).bindPopup(layer => {
+                return layer.feature.properties.place;
+            }).addTo(map);
+    })
