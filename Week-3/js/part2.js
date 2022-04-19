@@ -23,9 +23,9 @@ fetch("map.geojson")
         // Basic Leaflet method to add GeoJSON data
         L.geoJSON(data, {
                 pointToLayer: (feature, latlng) => { 
-                    return L.circleMarker(latlng, {color: feature.properties.color})
+                    return L.circleMarker(latlng, {color: feature.properties.Color})
                 }
             }).bindPopup(layer => {
-                return layer.feature.properties.place;
+                return layer.feature.properties.College;
             }).addTo(map);
     })
