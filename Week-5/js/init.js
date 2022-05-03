@@ -29,7 +29,7 @@ function processData(results){
     console.log(results)
     results.data.forEach(data => {
         console.log(data)
-        addMarker(data.lat,data.lng,data['Zipcode'],data['Graduate Program in SEIS'])
+        addMarker(data.lat,data.lng,data['"Did you live in LA prior to the start of your graduate program?"'],data['Graduate Program in SEIS'])
     })
 }
 
