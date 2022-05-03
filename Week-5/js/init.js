@@ -9,14 +9,13 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 // create a function to add markers
-function addMarker(data){
+function addMarker(lat,lng,title,message){
     console.log(message)
-    L.marker([data.lat,data.lng]).addTo(map).bindPopup(`<h2>${data['Zipcode']}</h2> <h3>${data['Graduate Program in SEIS']}</h3>`)
-    
+    L.marker([lat,lng]).addTo(map).bindPopup(`<h2>${title}</h2> <h3>${message}</h3>`)
     return message
 }
 
-const dataUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSXUeZeWwRM9BM8Nk3HQPdrM7nmkGRtzJrFsG-ZaF7KFATkqyWpABk-cNi3WiFKfDhpQg_BTDi5Rs8G/pub?output=csv"
+const dataUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT1xCBcV3kIifnoFWNo_YXtDFC_RtC4GDG29LCL2gbbWN0f7mu69owmBrtR__OU7Mw9pLnYDssyVkMk/pub?output=csv"
 
 function loadData(url){
     Papa.parse(url, {
