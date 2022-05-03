@@ -11,7 +11,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // create a function to add markers
 function addMarker(lat,lng,title,message){
     console.log(message)
-    L.marker([lat,lng]).addTo(map).bindPopup(`<h2>${title}</h2> <h3>${message}</h3>`)
+    L.marker([lat,lng]).addTo(map).bindPopup(`<h2>How do you define support within your graduate school experience? How does support relate to your sense of belonging in SEIS and at UCLA?-- ${title}</h2> <h3> Please describe your experience using resources to support your graduate school experience. We welcome comments about what you've found to be most helpful, challenges you've had accessing resources, suggestion for new resources, etc.-- ${message}</h3>`)
     return message
 }
 
