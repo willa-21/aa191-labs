@@ -29,7 +29,7 @@ function processData(results){
     console.log(results)
     results.data.forEach(data => {
         console.log(data)
-        addMarker(data.lat,data.lng,data['"Did you live in LA prior to the start of your graduate program?"'],data['Graduate Program in SEIS'])
+        addMarker(data.lat,data.lng,data["How do you define support within your graduate school experience? How does support relate to your sense of belonging in SEIS and at UCLA?"],data["Please describe your experience using resources to support your graduate school experience. We welcome comments about what you've found to be most helpful, challenges you've had accessing resources, suggestion for new resources, etc."])
     })
 }
 
