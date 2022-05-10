@@ -34,13 +34,13 @@ header{
     height:80vh;
     grid-area: main_map;
 }
-
 #theSurvey{
-    grid-area: survey;
+    grid-area: survey; 
 }
 
 #placeForButtons{
     grid-area: buttonHome;
     display:grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2,1fr);
+
 }
